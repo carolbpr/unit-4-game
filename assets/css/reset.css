@@ -1,0 +1,7 @@
+body{
+    background-image: url(../images/simpsons_bg.png);
+    background-repeat: no-repeat;
+    max-width: -webkit-fill-available;
+
+   
+}

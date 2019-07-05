@@ -12,48 +12,54 @@
     <!-- Linking CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--link rel="stylesheet" type="text/css" href="assets/css/reset.css">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<section class=box>
+<!--Initializing the game characters-->
+<section id=boxBart>
     <p>Bart</p>
     <img id="bart" src="assets/images/bart.png" alt="Bart">
-    <p id=bartAP>Attack power here</p>
+    <p id=bartAP>AP here</p>
 </section>
-<section class=box>
+<section id=boxMaggie>
     <p>Maggie</p>
     <img id="maggie" src="assets/images/maggie.png" alt="Maggie">
-    <p id=maggieAP>Attack power here</p>
+    <p id=maggieAP>AP here</p>
 </section>
-<section class=box>
+<section id=boxLisa>
     <p>Lisa</p>
     <img id="lisa" src="assets/images/lisa.png" alt="Lisa">
-    <p id=lisaAP>Attack power here</p>
+    <p id=lisaAP>AP here</p>
 </section>
-<section class=box>
+<section id=boxNed>
     <p>Ned Flanders</p>
     <img id="ned" src="assets/images/ned_flanders.png" alt="Ned">
-    <p id=nedAP>Attack power here</p>
+    <p id=nedAP>AP here</p>
 </section>
 
-
+<!--Actually battle space-->
 
 <body>
-    <div id="first-Div">
+    <div id="playerDiv">
 
     </div>
     <div id="second-Div">
-
+        <h4>Your Character</h4>
     </div>
-    <div id="third-Div">
-
+    <div id="enemieDiv">
+        <h4>Your Enemies</h4>
     </div>
     <div id="fourth-Div">
-
+        <h4>Figth Section</h4>
     </div>
     <div id="fifth-Div">
-
+        <p id="attack">Attack</p>
     </div>
     <div id="sixth-Div">
-
+        <h4>Defender</h4>
     </div>
+    <div id="sixth-Div">
+    </div>
+    <!--Link .js file-->
+    <script src="assets/javascript/game.js"></script>
 
 </body>

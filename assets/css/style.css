@@ -6,11 +6,17 @@ body{
    
 }
 img{
-    width: 100%;
-    position:relative;
-
+    width: 80%;
+    position: absolute;;
+    margin-top:20px;
 }
-.box{
+
+p{
+    position: relative;
+    
+    margin: 0;
+}
+#boxBart{
     width: 1.5in;
     height: 1.5in;
     border-style: solid;
@@ -18,10 +24,37 @@ img{
     background: white;
     position: relative;
     display: inline-flex;
+    justify-content: center;
 }
-p{
-    position: absolute;
-    z-index: 2;
+#boxMaggie{
+    width: 1.5in;
+    height: 1.5in;
+    border-style: solid;
+    border-color: black;
+    background: white;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+}
+#boxLisa{
+    width: 1.5in;
+    height: 1.5in;
+    border-style: solid;
+    border-color: black;
+    background: white;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+}
+#boxNed{
+    width: 1.5in;
+    height: 1.5in;
+    border-style: solid;
+    border-color: black;
+    background: white;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
 }
 #bartAP{
     position: absolute;
@@ -29,6 +62,7 @@ p{
     padding: 0;
     margin: 0;
     z-index: 2;
+    justify-content: right;
 }
 #maggieAP{
     position: absolute;

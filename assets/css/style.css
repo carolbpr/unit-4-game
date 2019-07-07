@@ -13,10 +13,9 @@ img{
 
 p{
     position: relative;
-    
     margin: 0;
 }
-#boxBart{
+#boxbart{
     width: 1.5in;
     height: 1.5in;
     border-style: solid;
@@ -26,7 +25,7 @@ p{
     display: inline-flex;
     justify-content: center;
 }
-#boxMaggie{
+#boxmaggie{
     width: 1.5in;
     height: 1.5in;
     border-style: solid;
@@ -36,7 +35,7 @@ p{
     display: inline-flex;
     justify-content: center;
 }
-#boxLisa{
+#boxlisa{
     width: 1.5in;
     height: 1.5in;
     border-style: solid;
@@ -46,7 +45,7 @@ p{
     display: inline-flex;
     justify-content: center;
 }
-#boxNed{
+#boxned{
     width: 1.5in;
     height: 1.5in;
     border-style: solid;

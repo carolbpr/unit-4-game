@@ -28,6 +28,7 @@ var enemieCounterAttack = 0;
 var enemieHealthpoints = 0;
 var player = "";
 var defender = "";
+var counterwin = 0;
 $(document).ready(function () {
     $("#bartAP").text(bart.healthPoints);
     $("#maggieAP").text(maggie.healthPoints);
@@ -38,115 +39,128 @@ $(document).ready(function () {
     $("#bart").on("click", function () {
         if (playerselected === false) {
             //Selected Bart
-            $("#boxBart").appendTo("#playerDiv");
+            $("#boxbart").appendTo("#playerDiv");
             playerselected = true;
             playerHealthpoints = bart.healthPoints;
             playerAttack = bart.attackPower;
             player = "bart";
-            $("#boxMaggie").appendTo("#enemieDiv");
-            $("#boxMaggie").css("background-color", "red");
-            $("#boxLisa").appendTo("#enemieDiv");
-            $("#boxLisa").css("background-color", "red");
-            $("#boxNed").appendTo("#enemieDiv");
-            $("#boxNed").css("background-color", "red");
+            $("#boxmaggie").appendTo("#enemieDiv");
+            $("#boxmaggie").css("background-color", "red");
+            $("#boxlisa").appendTo("#enemieDiv");
+            $("#boxlisa").css("background-color", "red");
+            $("#boxned").appendTo("#enemieDiv");
+            $("#boxned").css("background-color", "red");
 
         }
-        else if (($("#boxBart").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+        else if (($("#boxbart").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
             defenderselected = true;
             enemieHealthpoints = bart.healthPoints;
             enemieCounterAttack = bart.counterAttackPower;
             defender = "bart";
             $("#attack").attr("disabled", false);
-            $("#boxBart").appendTo("#defenderDiv");
-            $("#boxBart").css("background-color", "black");
+            $("#boxbart").appendTo("#defenderDiv");
+            $("#boxbart").css("background-color", "black");
         }
     })
     $("#maggie").on("click", function () {
         if (playerselected === false) {
             //Selected Maggie
-            $("#boxMaggie").appendTo("#playerDiv");
+            $("#boxmaggie").appendTo("#playerDiv");
             playerselected = true;
             playerHealthpoints = maggie.healthPoints;
             playerAttack = maggie.attackPower;
             player = "maggie";
-            $("#boxBart").appendTo("#enemieDiv");
-            $("#boxBart").css("background-color", "red");
-            $("#boxLisa").appendTo("#enemieDiv");
-            $("#boxLisa").css("background-color", "red");
-            $("#boxNed").appendTo("#enemieDiv");
-            $("#boxNed").css("background-color", "red");
+            $("#boxbart").appendTo("#enemieDiv");
+            $("#boxbart").css("background-color", "red");
+            $("#boxlisa").appendTo("#enemieDiv");
+            $("#boxlisa").css("background-color", "red");
+            $("#boxned").appendTo("#enemieDiv");
+            $("#boxned").css("background-color", "red");
         }
-        else if (($("#boxMaggie").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+        else if (($("#boxmaggie").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
             defenderselected = true;
             enemieHealthpoints = maggie.healthPoints;
             enemieCounterAttack = maggie.counterAttackPower;
             defender = "maggie";
             $("#attack").attr("disabled", false);
-            $("#boxMaggie").appendTo("#defenderDiv");
-            $("#boxMaggie").css("background-color", "black");
+            $("#boxmaggie").appendTo("#defenderDiv");
+            $("#boxmaggie").css("background-color", "black");
 
         }
     })
     $("#lisa").on("click", function () {
         if (playerselected === false) {
             //Selected Lisa
-            $("#boxLisa").appendTo("#playerDiv");
+            $("#boxlisa").appendTo("#playerDiv");
             playerselected = true;
             playerHealthpoints = lisa.healthPoints;
             playerAttack = lisa.attackPower;
             player = "lisa";
-            $("#boxBart").appendTo("#enemieDiv");
-            $("#boxBart").css("background-color", "red");
-            $("#boxMaggie").appendTo("#enemieDiv");
-            $("#boxMaggie").css("background-color", "red");
-            $("#boxNed").appendTo("#enemieDiv");
-            $("#boxNed").css("background-color", "red");
+            $("#boxbart").appendTo("#enemieDiv");
+            $("#boxbart").css("background-color", "red");
+            $("#boxmaggie").appendTo("#enemieDiv");
+            $("#boxmaggie").css("background-color", "red");
+            $("#boxned").appendTo("#enemieDiv");
+            $("#boxned").css("background-color", "red");
         }
-        else if (($("#boxLisa").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+        else if (($("#boxlisa").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
             defenderselected = true;
             enemieHealthpoints = lisa.healthPoints;
             enemieCounterAttack = lisa.counterAttackPower;
             defender = "lisa";
             $("#attack").attr("disabled", false);
-            $("#boxLisa").appendTo("#defenderDiv");
-            $("#boxLisa").css("background-color", "black");
+            $("#boxlisa").appendTo("#defenderDiv");
+            $("#boxlisa").css("background-color", "black");
         }
     })
     $("#ned").on("click", function () {
         if (playerselected === false) {
             //Selected Ned
-            $("#boxNed").appendTo("#playerDiv");
+            $("#boxned").appendTo("#playerDiv");
             playerselected = true;
             playerHealthpoints = ned.healthPoints;
             playerAttack = ned.attackPower;
             player = "ned";
-            $("#boxBart").appendTo("#enemieDiv");
-            $("#boxBart").css("background-color", "red");
-            $("#boxMaggie").appendTo("#enemieDiv");
-            $("#boxMaggie").css("background-color", "red")
-            $("#boxLisa").appendTo("#enemieDiv");
-            $("#boxLisa").css("background-color", "red");
+            $("#boxbart").appendTo("#enemieDiv");
+            $("#boxbart").css("background-color", "red");
+            $("#boxmaggie").appendTo("#enemieDiv");
+            $("#boxmaggie").css("background-color", "red")
+            $("#boxlisa").appendTo("#enemieDiv");
+            $("#boxlisa").css("background-color", "red");
         }
-        else if (($("#boxNed").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+        else if (($("#boxned").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
             defenderselected = true;
             enemieHealthpoints = ned.healthPoints;
             enemieCounterAttack = ned.counterAttackPower;
             defender = "ned";
             $("#attack").attr("disabled", false);
-            $("#boxNed").appendTo("#defenderDiv");
-            $("#boxNed").css("background-color", "black");
+            $("#boxned").appendTo("#defenderDiv");
+            $("#boxned").css("background-color", "black");
         }
     })
     $("#attack").on("click", function () {
-
         if (playerselected === true && defenderselected === true) {
+            playerAttackUpdate = playerAttack + playerAttackUpdate;
             playerHealthpoints = playerHealthpoints - enemieCounterAttack;
             enemieHealthpoints = enemieHealthpoints - playerAttackUpdate;
-            playerAttackUpdate = playerAttack + playerAttackUpdate;
             $("#" + player + "AP").text(playerHealthpoints);
             $("#" + defender + "AP").text(enemieHealthpoints);
-
-  
+            if (playerHealthpoints <= 0 && enemieHealthpoints>0) {
+                $("#attack").attr("disabled", true);
+                alert("You lost!");
+            }
+            else if (enemieHealthpoints <= 0) {
+                $("#box" + defender).css("display", "none");
+                defenderselected = false;
+                counterwin++;
+                if(counterwin === 3){
+                    alert("YOU WIN!")
+                    $("#attack").attr("disabled", true);
+                }
+            }
+        }
+        else{
+            alert("Enemie has not been selected")
         }
     })
 });

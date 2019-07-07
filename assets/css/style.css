@@ -63,6 +63,8 @@ p{
     margin: 0;
     z-index: 2;
     justify-content: right;
+    font-weight: bold;
+    background-color: lightslategray;
 }
 #maggieAP{
     position: absolute;
@@ -70,6 +72,8 @@ p{
     padding: 0;
     margin: 0;
     z-index: 2;
+    font-weight: bold;
+    background-color: lightslategray;
 }
 #lisaAP{
     position: absolute;
@@ -77,6 +81,8 @@ p{
     padding: 0;
     margin: 0;
     z-index: 2;
+    font-weight: bold;
+    background-color: lightslategray;
 }
 #nedAP{
     position: absolute;
@@ -84,4 +90,6 @@ p{
     padding: 0;
     margin: 0;
     z-index: 2;
+    font-weight: bold;
+    background-color: lightslategray;
 }

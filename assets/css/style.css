@@ -2,8 +2,12 @@ body{
     background-image: url(../images/simpsons_bg.png);
     background-repeat: no-repeat;
     background-size: 100%;
-
+    font-family: 'Gochi Hand', cursive;
    
+}
+#logo{
+    right:50px;
+    width: 500px;
 }
 img{
     width: 80%;
@@ -14,10 +18,12 @@ img{
 p{
     position: relative;
     margin: 0;
+    
 }
 #boxbart{
     width: 1.5in;
     height: 1.5in;
+    border: 2px;
     border-style: solid;
     border-color: black;
     background: white;
@@ -28,6 +34,7 @@ p{
 #boxmaggie{
     width: 1.5in;
     height: 1.5in;
+    border: 2px;
     border-style: solid;
     border-color: black;
     background: white;
@@ -38,6 +45,7 @@ p{
 #boxlisa{
     width: 1.5in;
     height: 1.5in;
+    border: 2px;
     border-style: solid;
     border-color: black;
     background: white;
@@ -48,6 +56,7 @@ p{
 #boxned{
     width: 1.5in;
     height: 1.5in;
+    border: 2px;
     border-style: solid;
     border-color: black;
     background: white;
@@ -99,4 +108,7 @@ p{
 #line2{
     font-size: 10px;
     position: relative;
+}
+#resetbutton{
+    visibility: hidden;
 }

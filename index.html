@@ -5,63 +5,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RPG games</title>
-    <link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet">
+    <!--Font style-->
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
     <!--Linking Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Linking CSS -->
+    <!--link rel="stylesheet" type="text/css" href="assets/css/reset.css"-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!--link rel="stylesheet" type="text/css" href="assets/css/reset.css">-->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<!--Initializing the game characters-->
-<section id=boxbart>
-    <p>Bart</p>
-    <img id="bart" src="assets/images/bart.png" alt="Bart">
-    <p id=bartAP></p>
-</section>
-<section id=boxmaggie>
-    <p>Maggie</p>
-    <img id="maggie" src="assets/images/maggie.png" alt="Maggie">
-    <p id=maggieAP></p>
-</section>
-<section id=boxlisa>
-    <p>Lisa</p>
-    <img id="lisa" src="assets/images/lisa.png" alt="Lisa">
-    <p id=lisaAP></p>
-</section>
-<section id=boxned>
-    <p>Ned Flanders</p>
-    <img id="ned" src="assets/images/ned_flanders.png" alt="Ned">
-    <p id=nedAP></p>
-</section>
 
-<!--Actually battle space-->
-
+<!--Battle space-->
 <body>
+    <img id = "logo" src="assets/images/gamelogo.png" alt = "gamelogo">
     <div id="playerDiv">
-
+        <!--Initializing the game characters-->
+        <section id=boxbart>
+            <p>BART</p>
+            <img id="bart" src="assets/images/bart.png" alt="Bart">
+            <p id=bartAP></p>
+        </section>
+        <section id=boxmaggie>
+            <p>MAGGIE</p>
+            <img id="maggie" src="assets/images/maggie.png" alt="Maggie">
+            <p id=maggieAP></p>
+        </section>
+        <section id=boxlisa>
+            <p>LISA</p>
+            <img id="lisa" src="assets/images/lisa.png" alt="Lisa">
+            <p id=lisaAP></p>
+        </section>
+        <section id=boxned>
+            <p>NED FLANDERS</p>
+            <img id="ned" src="assets/images/ned_flanders.png" alt="Ned">
+            <p id=nedAP></p>
+        </section>
     </div>
     <div id="second-Div">
-        <h4>Your Character</h4>
+        <h4>YOUR CHARACTER</h4>
     </div>
     <div id="enemyDiv">
-        <h4>Your Enemies</h4>
+        <h4>YOUR ENEMIES</h4>
     </div>
     <div id="fourth-Div">
-        <h4>Figth Section</h4>
+        <h4>FIGTH SECTION </h4>
     </div>
     <div id="attackDiv">
-            <button type="button" id = "attack"> Attack </button>
-        <!--p id="attack">Attack</p-->
+        <button type="button" id="attack"> ATTACK </button>
     </div>
     <div id="sixth-Div">
-        <h4>Defender</h4>
+        <h4>DEFENDER</h4>
     </div>
     <div id="defenderDiv">
-        <!--span id = line1></span>
-        <span id = line2></span-->
     </div>
+    <div id="resetDiv">
+            <button type="button" id="resetbutton"> RESET </button>
+        </div>
     <!--Link .js file-->
     <script src="assets/javascript/game.js"></script>
 

@@ -3,14 +3,14 @@ var playerselected = false;
 var defenderselected = false;
 var bart = {
     name: "BART",
-    healthPoints: 100,
+    healthPoints: 120,
     attackPower: 8,
     counterAttackPower: 10,
 };
 var maggie = {
     name: "MAGGIE",
-    healthPoints: 120,
-    attackPower: 5,
+    healthPoints: 100,
+    attackPower: 15,
     counterAttackPower: 5,
 };
 var lisa = {
@@ -22,7 +22,7 @@ var lisa = {
 var ned = {
     name: "NED FLANDERS",
     healthPoints: 180,
-    attackPower: 15,
+    attackPower: 10,
     counterAttackPower: 25,
 };
 var playerHealthpoints = 0;
@@ -46,7 +46,7 @@ $(document).ready(function () {
     $("#attack").attr("disabled", true);
     line1.text("Choose your Charater to start the game");
     $("#defenderDiv").append(line1);
-    $("#bart").on("click", function () {
+    $("#boxbart").on("click", function () {
         line1.empty();
         if (playerselected === false) {
             //Selected Bart
@@ -72,9 +72,10 @@ $(document).ready(function () {
             defender = "bart";
             $("#boxbart").appendTo("#defenderDiv");
             $("#boxbart").css("background-color", "black");
+            $("#boxbart").css("color", "yellow");
         }
     })
-    $("#maggie").on("click", function () {
+    $("#boxmaggie").on("click", function () {
         line1.empty();
         if (playerselected === false) {
             //Selected Maggie
@@ -100,10 +101,11 @@ $(document).ready(function () {
             defender = "maggie";
             $("#boxmaggie").appendTo("#defenderDiv");
             $("#boxmaggie").css("background-color", "black");
+            $("#boxmaggie").css("color", "yellow");
 
         }
     })
-    $("#lisa").on("click", function () {
+    $("#boxlisa").on("click", function () {
         line1.empty();
         if (playerselected === false) {
             //Selected Lisa
@@ -129,9 +131,10 @@ $(document).ready(function () {
             defender = "lisa";
             $("#boxlisa").appendTo("#defenderDiv");
             $("#boxlisa").css("background-color", "black");
+            $("#boxlisa").css("color", "yellow");
         }
     })
-    $("#ned").on("click", function () {
+    $("#boxned").on("click", function () {
         line1.empty();
         if (playerselected === false) {
             //Selected Ned
@@ -157,12 +160,12 @@ $(document).ready(function () {
             defender = "ned";
             $("#boxned").appendTo("#defenderDiv");
             $("#boxned").css("background-color", "black");
+            $("#boxned").css("color", "yellow");
         }
     })
     $("#attack").on("click", function () {
         line1.empty();
         line2.empty();
-
         if (playerselected === true && defenderselected === true) {
             playerAttackUpdate = playerAttack + playerAttackUpdate;
             playerHealthpoints = playerHealthpoints - enemyCounterAttack;
@@ -175,7 +178,7 @@ $(document).ready(function () {
                 line2.text(enemyname + " attacked you back for " + enemyCounterAttack + " damage");
                 $("#defenderDiv").append(line2);
             }
-            else if (playerHealthpoints <= 0 && enemyHealthpoints > 0) {
+            else if (playerHealthpoints <=0) {
                 $("#attack").attr("disabled", true);
                 line1.text("You've been defeated...GAME OVER!!!");
                 $("#defenderDiv").append(line1);
@@ -249,15 +252,19 @@ $(document).ready(function () {
         line2 = $("<div>");
         $("#boxbart").appendTo("#playerDiv");
         $("#boxbart").css("background-color", "white");
+        $("#boxbart").css("color","black");
         $("#boxbart").css("display", "inline-flex");
         $("#boxmaggie").appendTo("#playerDiv");
         $("#boxmaggie").css("background-color", "white");
+        $("#boxmaggie").css("color","black");
         $("#boxmaggie").css("display", "inline-flex");
         $("#boxlisa").appendTo("#playerDiv");
         $("#boxlisa").css("background-color", "white");
+        $("#boxlisa").css("color","black");
         $("#boxlisa").css("display", "inline-flex");
         $("#boxned").appendTo("#playerDiv");
         $("#boxned").css("background-color", "white");
+        $("#boxned").css("color","black");
         $("#boxned").css("display", "inline-flex");
         $("#bartAP").text(bart.healthPoints);
         $("#maggieAP").text(maggie.healthPoints);

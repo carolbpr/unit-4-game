@@ -16,7 +16,7 @@ var maggie = {
 var lisa = {
     name: "LISA",
     healthPoints: 150,
-    attackPower: 8,
+    attackPower: 5,
     counterAttackPower: 20,
 };
 var ned = {

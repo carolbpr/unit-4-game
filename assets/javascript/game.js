@@ -39,17 +39,19 @@ var line1 = $("<div>");
 var line2 = $("<div>");
 
 $(document).ready(function () {
+    //Set initial HealthPoints for each Character
     $("#bartAP").text(bart.healthPoints);
     $("#maggieAP").text(maggie.healthPoints);
     $("#lisaAP").text(lisa.healthPoints);
     $("#nedAP").text(ned.healthPoints);
     $("#attack").attr("disabled", true);
+    //Message for the player to know how to start the game
     line1.text("Choose your Charater to start the game");
     $("#defenderDiv").append(line1);
     $("#boxbart").on("click", function () {
         line1.empty();
         if (playerselected === false) {
-            //Selected Bart
+            //Selected Bart as player
             $("#boxbart").appendTo("#playerDiv");
             playerselected = true;
             $("#attack").attr("disabled", false);
@@ -65,6 +67,7 @@ $(document).ready(function () {
             $("#boxned").css("background-color", "red");
         }
         else if (($("#boxbart").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+            //Selected Bart as enemy
             defenderselected = true;
             enemyname = bart.name;
             enemyHealthpoints = bart.healthPoints;
@@ -78,7 +81,7 @@ $(document).ready(function () {
     $("#boxmaggie").on("click", function () {
         line1.empty();
         if (playerselected === false) {
-            //Selected Maggie
+            //Selected Maggie as player
             $("#boxmaggie").appendTo("#playerDiv");
             playerselected = true;
             $("#attack").attr("disabled", false);
@@ -94,6 +97,7 @@ $(document).ready(function () {
             $("#boxned").css("background-color", "red");
         }
         else if (($("#boxmaggie").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+            //Selected Maggie as enemy
             defenderselected = true;
             enemyname = maggie.name;
             enemyHealthpoints = maggie.healthPoints;
@@ -108,7 +112,7 @@ $(document).ready(function () {
     $("#boxlisa").on("click", function () {
         line1.empty();
         if (playerselected === false) {
-            //Selected Lisa
+            //Selected Lisa as a player
             $("#boxlisa").appendTo("#playerDiv");
             playerselected = true;
             $("#attack").attr("disabled", false);
@@ -124,6 +128,7 @@ $(document).ready(function () {
             $("#boxned").css("background-color", "red");
         }
         else if (($("#boxlisa").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+            //Selected Lisa as enemy
             defenderselected = true;
             enemyname = lisa.name;
             enemyHealthpoints = lisa.healthPoints;
@@ -137,7 +142,7 @@ $(document).ready(function () {
     $("#boxned").on("click", function () {
         line1.empty();
         if (playerselected === false) {
-            //Selected Ned
+            //Selected Ned as player
             $("#boxned").appendTo("#playerDiv");
             playerselected = true;
             $("#attack").attr("disabled", false);
@@ -153,6 +158,7 @@ $(document).ready(function () {
             $("#boxlisa").css("background-color", "red");
         }
         else if (($("#boxned").css("background-color") === "rgb(255, 0, 0)") && (defenderselected == false)) {
+            //Selected Ned as enemy
             defenderselected = true;
             enemyname = ned.name;
             enemyHealthpoints = ned.healthPoints;
@@ -164,51 +170,60 @@ $(document).ready(function () {
         }
     })
     $("#attack").on("click", function () {
+        //When you click on Attack button
         line1.empty();
         line2.empty();
+        //This condition check if both player and defenders have been selected to proceed with the attack
         if (playerselected === true && defenderselected === true) {
+            //Attack calculations
             playerAttackUpdate = playerAttack + playerAttackUpdate;
             playerHealthpoints = playerHealthpoints - enemyCounterAttack;
             enemyHealthpoints = enemyHealthpoints - playerAttackUpdate;
             $("#" + player + "AP").text(playerHealthpoints);
             $("#" + defender + "AP").text(enemyHealthpoints);
+            //This condition check if the player or the defender health points is above 0 so the game can continue
             if (playerHealthpoints > 0 && enemyHealthpoints > 0) {
                 line1.text("You attacked " + enemyname + " for " + playerAttackUpdate + " damage");
                 $("#defenderDiv").append(line1);
                 line2.text(enemyname + " attacked you back for " + enemyCounterAttack + " damage");
                 $("#defenderDiv").append(line2);
             }
+            //This condition check is the player healthpoints is equal or below 0, if it is true then Game is over
             else if (playerHealthpoints <=0) {
                 $("#attack").attr("disabled", true);
                 line1.text("You've been defeated...GAME OVER!!!");
                 $("#defenderDiv").append(line1);
-                //$("#defenderDiv").append(resetbutton);
                 $("#resetbutton").css("visibility", "visible");
                 line2.empty();
             }
+            //This condition check is the defender healthpoints is equal or below 0
             else if (enemyHealthpoints <= 0) {
                 $("#box" + defender).css("display", "none");
                 defenderselected = false;
                 counterwin++;
+                //if it is true the defender will be removed from the game
                 line1.text("You've defeated " + enemyname + ", choose another enemy");
                 line2.empty();
+                //this condition check if counterwin has increased to 3 so that means that the three defenders has been defeated by the player
+                //so Player wins
                 if (counterwin === 3) {
                     line1.empty();
                     line1.text("YOU WON!!!");
                     $("#defenderDiv").append(line1);
-                    //$("#defenderDiv").append(resetbutton);
                     $("#resetbutton").css("visibility", "visible");
                     line2.empty();
                     $("#attack").attr("disabled", true);
                 }
             }
         }
+        //in case the condition is false it is because the defender has not been selected
         else {
             line1.text("Enemy has not been selected");
             $("#defenderDiv").append(line1);
             line2.empty();
         }
     })
+    //reset button will only appear if the game is completed by winning or losing the game
     $("#resetbutton").on("click", function(){
         $("#resetbutton").css("visibility","hidden");
         line1.empty();

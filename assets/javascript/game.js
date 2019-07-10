@@ -189,7 +189,7 @@ $(document).ready(function () {
                 $("#defenderDiv").append(line2);
             }
             //This condition check is the player healthpoints is equal or below 0, if it is true then Game is over
-            else if (playerHealthpoints <=0) {
+            else if (playerHealthpoints <= 0) {
                 $("#attack").attr("disabled", true);
                 line1.text("You've been defeated...GAME OVER!!!");
                 $("#defenderDiv").append(line1);
@@ -224,33 +224,33 @@ $(document).ready(function () {
         }
     })
     //reset button will only appear if the game is completed by winning or losing the game
-    $("#resetbutton").on("click", function(){
-        $("#resetbutton").css("visibility","hidden");
+    $("#resetbutton").on("click", function () {
+        $("#resetbutton").css("visibility", "hidden");
         line1.empty();
         playerselected = false;
         defenderselected = false;
         bart = {
             name: "BART",
-            healthPoints: 100,
+            healthPoints: 120,
             attackPower: 8,
             counterAttackPower: 10,
         };
         maggie = {
             name: "MAGGIE",
-            healthPoints: 120,
-            attackPower: 5,
+            healthPoints: 100,
+            attackPower: 15,
             counterAttackPower: 5,
         };
         lisa = {
             name: "LISA",
             healthPoints: 150,
-            attackPower: 8,
+            attackPower: 5,
             counterAttackPower: 20,
         };
         ned = {
             name: "NED FLANDERS",
             healthPoints: 180,
-            attackPower: 15,
+            attackPower: 10,
             counterAttackPower: 25,
         };
         playerHealthpoints = 0;
@@ -267,19 +267,19 @@ $(document).ready(function () {
         line2 = $("<div>");
         $("#boxbart").appendTo("#playerDiv");
         $("#boxbart").css("background-color", "white");
-        $("#boxbart").css("color","black");
+        $("#boxbart").css("color", "black");
         $("#boxbart").css("display", "inline-flex");
         $("#boxmaggie").appendTo("#playerDiv");
         $("#boxmaggie").css("background-color", "white");
-        $("#boxmaggie").css("color","black");
+        $("#boxmaggie").css("color", "black");
         $("#boxmaggie").css("display", "inline-flex");
         $("#boxlisa").appendTo("#playerDiv");
         $("#boxlisa").css("background-color", "white");
-        $("#boxlisa").css("color","black");
+        $("#boxlisa").css("color", "black");
         $("#boxlisa").css("display", "inline-flex");
         $("#boxned").appendTo("#playerDiv");
         $("#boxned").css("background-color", "white");
-        $("#boxned").css("color","black");
+        $("#boxned").css("color", "black");
         $("#boxned").css("display", "inline-flex");
         $("#bartAP").text(bart.healthPoints);
         $("#maggieAP").text(maggie.healthPoints);
@@ -288,6 +288,6 @@ $(document).ready(function () {
         $("#attack").attr("disabled", true);
         line1.text("Choose your Charater to start the game");
         $("#defenderDiv").append(line1);
-        
+
     })
 });
